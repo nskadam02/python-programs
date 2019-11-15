@@ -21,12 +21,58 @@ class BankAccount:
 def main():
     obj1=BankAccount("Neha",1000);
     obj1.Display();
-    obj1.Deposit(100);
+    value=int(input("Enter amount to deposit:"))
+    obj1.Deposit(value);
     obj1.Display();
-    obj1.Withdraw(100);
+    value1=int(input("Enter amount to withdraw:"));
+    obj1.Withdraw(value1);
     obj1.Display();
-    obj1.calculatIntrest(2);
+    time=float(input("enter year to find intrest:"))
+    obj1.calculatIntrest(time);
 
 if __name__ == "__main__":
     main();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
