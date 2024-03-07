@@ -5,34 +5,28 @@ def Accept():
     for i in range(no):
         no1=int(input("Enter number to add in list:"));
         arr.append(no1);
-    return arr;    
-
-def Compare(no1):
-  if (no1>=70 and  no1<=90):
-      return True;
-  else:
-      return False;
-
-def Modify(no1):
-    return no1+10;
-
-def Reduce(no1,no2):
-    return no1*no2;
+    return arr;
+def ChkPrime(num):
+    if num>1:
+        for i in range(2,num):
+            if (num%i)==0:
+                return False;
+                break;
+        else:
+           return True
+    else:
+       return False;    
 
 def main():
     RawData=Accept();
     print("Accepted data is:",RawData);
-    FilterData=list(filter(Compare,RawData));
+    FilterData=list(filter(ChkPrime,RawData));
     print("Filtered data is:",FilterData);
-    ModifiedData=list(map(Modify,FilterData));
+    ModifiedData=list(map(lambda no1:(no1*2),FilterData));
     print("Modified data is:",ModifiedData);
     if(len(ModifiedData)!=0):
-       Output=reduce(Reduce,ModifiedData);
+       Output=reduce(lambda no1,no2:max(no1,no2),ModifiedData);
        print("Final answer is:",Output);
 
-
-
-
-if  __name__ == "__main__":
-     main();        
-
+if __name__ == "__main__":
+    main();    
